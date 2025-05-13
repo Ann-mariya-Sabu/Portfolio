@@ -5,12 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PORTFOLIO</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .Icon {
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .icon1 {
+      top: 15%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+    
+    .icon2 {
+      top: 25%;
+      right: 5%;
+      animation-delay: 1s;
+    }
+    
+    .icon3 {
+      top: 55%;
+      left: 10%;
+      animation-delay: 2s;
+    }
+    
+    .icon4 {
+      top: 65%;
+      right: 10%;
+      animation-delay: 3s;
+    }
+    
+    .icon5 {
+      top: 80%;
+      left: 15%;
+      animation-delay: 4s;
+    }
+    
+    
+    @media (max-width: 768px) {
+      /* Home section */
+      .image {
+        padding-top: 150px;
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+      }
+      
+      .float-img {
+       
+        display: none;
+      }
+      
+      .floating-name {
+        font-size: 2.5rem !important;
+      }
+      
+      /* About section */
+      .about-container {
+        flex-direction: column;
+        padding: 80px 20px !important;
+        margin: 0 15px !important;
+      }
+      
+      .about-image {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin-bottom: 30px;
+        width: 200px !important;
+        height: 200px !important;
+      }
+      
+      .about-content {
+        margin-left: 0 !important;
+        text-align: center;
+      }
+      
+      /* Skills section */
+      .progress-section {
+        height: auto !important;
+        padding-bottom: 100px !important;
+      }
+      
+      .Icon {
+        display: none; /* Hide floating icons on mobile */
+      }
+      
+      /* Projects section */
+      .projects {
+        height: auto !important;
+        padding-bottom: 50px;
+      }
+      
+      .card {
+        margin-bottom: 20px;
+      }
+      
+      /* Internships section */
+      .internship {
+        min-height: auto !important;
+        padding-bottom: 50px;
+      }
+      
+      /* Contact section */
+      .contacts {
+        min-height: auto !important;
+      }
+      
+      .contact {
+        flex-direction: column;
+      }
+      
+      .contact-info, .contact-form {
+        width: 100% !important;
+        padding: 20px !important;
+      }
+      
+      .contact-info ul li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .contact-info ul li span {
+        text-align: left !important;
+        margin-bottom: 5px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      /* Navbar */
+      .navbar-brand {
+        font-size: 1rem;
+      }
+      
+      /* Home section */
+      .floating-name {
+        font-size: 2rem !important;
+      }
+      
+      /* Modal adjustments */
+      .modal-body img {
+        width: 100% !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #2c3e50;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;margin-bottom: 0.1%;">
     <div class="container">
       <a class="navbar-brand fw-bolder text-white">Ann Mariya Sabu</a>
       
@@ -33,283 +186,406 @@
             <a class="nav-link fw-bold text-white" href="#project">Projects</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link fw-bold text-white" href="#internship">Internships</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link fw-bold text-white" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>  
-  <div id="home" class="image" style="background: linear-gradient(to top, #2c3e50, #4ca1af); position: relative; height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding-top: 200px;">
+
+  <div id="home" class="image" style="background: black; position: relative; height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding-top: 200px;">
     <div class="text-center">
-      <div class="fs-1 fw-bold" style="color: black;">
+      <div class="fs-1 fw-bold" style="color: #fff;">
         Hi, This is
       </div>
-      <div class="floating-name display-1 fw-bolder" style="color: #fff;">
+       <div class="floating-name display-1 fw-bolder" style="color: #fff;font-family: 'Cinzel', serif;">
         Ann Mariya Sabu
       </div>
+      <p style="font-family: 'Roboto', sans-serif; font-size: 1.2rem; color: #ffffff;">
+       <i>-Aspiring Data Scientist</i>
+      </p>
     </div>
   
-  
-        <img style="width: 300px; margin-left: 250px; position: relative;" src="C:\Users\Annmariya\Downloads\image.png" class="float-img">
-
-      </div>
-  
-  
+    <img style="width: 50%;height: 100%; position: relative;bottom:30%;" src="https://i.postimg.cc/sxBkCZTY/me2-removebg-preview.png" class="float-img">
+  </div>
 
   <div id="about" class="about-section d-flex justify-content-center align-items-center vh-100 bg-white">
-    <div class="about-container d-flex align-items-center ms-5" style="background: linear-gradient(to right, #2c3e50, #4ca1af); border-radius: 50px; padding: 140px 50px; position: relative; gap: 30px;">  
-    <div class="about-image" style="width: 250px; height: 250px;  border-radius: 20px; overflow: hidden; position: absolute; left: -125px; top: 50%; transform: translateY(-50%); background-color: white;">
-      <img src="https://cdn.pixabay.com/photo/2024/11/10/12/33/woman-9187786_1280.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    
-    <div class="about-content" style="margin-left: 100px;">
-      <h2 class="fs-2 fw-bold">
-<span style="color: #000;">ABOUT</span> 
-<span style="color: #fff;">ME</span></h2>
-  <p style="line-height: 1.5; margin: 20px 0 20px;color: #DCDCDC;">
-    Hello<br>I am Ann. I am a software developer who enjoys building websites and applications.
-    <br> I have experience with coding languages like JavaScript and C.
-    <br> I like learning new things and working on creative projects.
-  </p>
-  <a href="#contact" class="btn fw-bold" style="background-color: #4ca1af; color: white; padding: 8px 16px; border-radius: 6px; border: none;">
-    Contact Me
-  </a>
-</div>
-  </div>
-</div>
-</div>
-
-<section id="Skills" class="progress-section py-5 px-2 mt-5  position-relative"style="background: linear-gradient(to left, #2c3e50, #4ca1af);">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="Icon icon1" alt="JS" width="70">
-<img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" class="Icon icon2" alt="Java" width="80">
-<img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" class="Icon icon3" alt="C++" width="75">
-<img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" class="Icon icon4" alt="Node" width="85">
-<img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="Icon icon5" alt="HTML" width="90">
-
-  <div class="container">
-    <h2 class="text-center fw-bold mb-4 fs-1">
-      <span style="color: #000;">MY </span>
-      <span style="color: #fff;">SKILLS</span>
-    </h2>
-    <br><br><br>
-  <div class="container" style="max-width: 800px;">
-
-     <div class="row mb-4 align-items-center">
-      <div class="col-md-3 fw-bold" style="color: #DCDCDC;">JavaScript</div>
-      <div class="col-md-7">
-        <div class="progress">
-          <div class="progress-bar " style="width: 15%; background-color: #4ca1af;"></div>
-        </div>
-      </div>
-      <div class="col-md-2 fw-bold">15%</div>
-    </div>
-    
-
-    <div class="row mb-4 align-items-center">
-      <div class="col-md-3 fw-bold"style="color: #DCDCDC;">Java</div>
-      <div class="col-md-7">
-        <div class="progress">
-          <div class="progress-bar" style="width: 75%; background-color: #4ca1af;"></div>
-        </div>
-      </div>
-      <div class="col-md-2 fw-bold">75%</div>
-    </div>
- 
-     <div class="row mb-4 align-items-center">
-      <div class="col-md-3 fw-bold"style="color: #DCDCDC;">C++</div>
-      <div class="col-md-7">
-        <div class="progress" >
-          <div class="progress-bar" style="width: 50%; background-color: #4ca1af;"></div>
-        </div>
-      </div>
-      <div class="col-md-2 fw-bold">50%</div>
-    </div>
-
-    <div class="row mb-4 align-items-center">
-      <div class="col-md-3 fw-bold"style="color: #DCDCDC;">Nodejs</div>
-      <div class="col-md-7">
-        <div class="progress">
-          <div class="progress-bar" style="width: 35%; background-color: #4ca1af;"></div>
-        </div>
-      </div>
-      <div class="col-md-2 fw-bold">35%</div>
-    </div>
-    
-    
-  
-  <div class="row mb-4 align-items-center">
-    <div class="col-md-3 fw-bold"style="color: #DCDCDC;">HTML & CSS</div>
-    <div class="col-md-7">
-      <div class="progress">
-        <div class="progress-bar" style="width: 90%; background-color: #4ca1af;"></div>
-      </div>
-    </div>
-    <div class="col-md-2 fw-bold">90%</div>
-  </div>
-  </div>
-</section>
-
-
-<section id="project" class="projects py-5 px-2">
-  <div class="container">
-    <h2 class="text-center fw-bold mb-4 fs-1">
-      <span class="text-dark">MY </span>
-      <span style="color: #4ca1af;">PROJECTS</span>
-    </h2>  
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#project1" style="cursor: pointer;">
-          <img src="https://cdn.pixabay.com/photo/2023/04/03/12/59/crowd-7896788_1280.jpg" class="card-img-top img-fluid" alt="Art Event Management">
-          <div class="card-body">
-            <h5 class="card-title">Art Event Management</h5>
-            <p class="card-text">A Ticket Booking website for Art Event like exhibition, Art Gallery Shows etc.</p>
-          </div>
-        </div>
+    <div class="about-container d-flex align-items-center ms-5" style="background: black; border-radius: 50px; padding: 140px 50px; position: relative; gap: 30px;">  
+      <div class="about-image" style="width: 250px; height: 250px; border-radius: 20px; overflow: hidden; position: absolute; left: -125px; top: 50%; transform: translateY(-50%); background-color: white;">
+        <img src="https://cdn.pixabay.com/photo/2024/11/10/12/33/woman-9187786_1280.jpg" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
       
-      <div class="col-md-4">
-        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#project2" style="cursor: pointer;">
-          <img src="https://cdn.pixabay.com/photo/2022/06/02/15/01/music-7238254_1280.jpg" class="card-img-top img-fluid" alt="EventWibe">
-          <div class="card-body">
-            <h5 class="card-title">EventWibe</h5>
-            <p class="card-text">A Ticket Booking website for Events like Concerts, Music shows etc.</p>
+      <div class="about-content" style="margin-left: 100px;">
+        <h2 class="fs-2 fw-bold">
+          <span style="color: #fff;">ABOUT</span> 
+          <span style="color: #fff;">ME</span>
+        </h2>
+        <p style="line-height: 1.5; margin: 20px 0 20px;color: #DCDCDC;">
+          Hello<br>I am Ann. I am a software developer who enjoys building websites and applications.
+          <br> I have experience with coding languages like JavaScript and C.
+          <br> I like learning new things and working on creative projects.
+        </p>
+        <a href="#contact" class="btn fw-bold" style="background-color: #D4AF37; padding: 8px 16px; border-radius: 6px; border: none;">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section id="Skills" class="progress-section py-5 px-2 mt-5 position-relative" style="background: #000; height:100vh;">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="Icon icon1" alt="JS" width="70">
+    <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" class="Icon icon2" alt="Java" width="80">
+    <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" class="Icon icon3" alt="C++" width="75">
+    <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" class="Icon icon4" alt="Node" width="85">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="Icon icon5" alt="HTML" width="90">
+
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 fs-1" >
+        <span style="color: #fff;">MY </span>
+        <span style="color: #fff;">SKILLS</span>
+      </h2>
+      <br><br><br>
+      <div class="container" style="max-width: 800px;">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 fw-bold" style="color: #ffffff;">JavaScript</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar" style="width: 15%; background-color: #ffffff;"></div>
+            </div>
           </div>
+          <div class="col-md-2 fw-bold" style="color:#fff">15%</div>
+        </div>
+        
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 fw-bold" style="color: #fff;">Java</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar" style="width: 75%; background-color: #ffffff;"></div>
+            </div>
+          </div>
+          <div class="col-md-2 fw-bold" style="color:#fff">75%</div>
+        </div>
+        
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 fw-bold" style="color: #fff;">C++</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar" style="width: 50%; background-color: #ffffff;"></div>
+            </div>
+          </div>
+          <div class="col-md-2 fw-bold" style="color:#fff">50%</div>
+        </div>
+
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 fw-bold" style="color: #fff;">Nodejs</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar" style="width: 35%; background-color: #ffffff;"></div>
+            </div>
+          </div>
+          <div class="col-md-2 fw-bold" style="color:#fff">35%</div>
+        </div>
+        
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 fw-bold" style="color: #fff;">HTML & CSS</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar" style="width: 90%; background-color: #ffffff;"></div>
+            </div>
+          </div>
+          <div class="col-md-2 fw-bold" style="color:#fff">90%</div>
         </div>
       </div>
-      
-      <div class="col-md-4">
-        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#project3" style="cursor: pointer;">
-          <img src="https://cdn.pixabay.com/photo/2022/07/13/21/57/editing-7320125_1280.jpg" class="card-img-top img-fluid" alt="Da Vinci Resolve">
-          <div class="card-body">
-            <h5 class="card-title">Da Vinci Resolve</h5>
-            <p class="card-text">A website for editing, color grading, VFX, motion graphics, and audio tools.</p>
+    </div>
+  </section>
+
+  <section id="project" class="projects py-5 px-2" style="height: auto; background-color: white;">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 fs-1">
+        <span class="text-dark">MY PROJECTS</span>
+      </h2>  
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#project1" style="border: 5px solid #000000;">
+            <img src="https://cdn.pixabay.com/photo/2023/04/03/12/59/crowd-7896788_1280.jpg" class="card-img-top img-fluid" alt="Art Event Management" style="height: 200px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Art Event Management</h5>
+              <p class="card-text">A Ticket Booking website for Art Event like exhibition, Art Gallery Shows etc.</p>
+              <div class="mt-auto text-center">
+                <div class="btn fw-bold" style="background-color: #000; padding: 8px 16px; border-radius: 6px; border: none;color: #fff;">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#project2" style="border: 5px solid #000000;">
+            <img src="https://cdn.pixabay.com/photo/2022/06/02/15/01/music-7238254_1280.jpg" class="card-img-top img-fluid" alt="EventWibe" style="height: 200px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">EventWibe</h5>
+              <p class="card-text">A Ticket Booking website for Events like Concerts, Music shows etc.</p>
+              <div class="mt-auto text-center">
+                <div class="btn fw-bold" style="background-color: #000; padding: 8px 16px; border-radius: 6px; border: none;color: #fff;">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#project3" style="border: 5px solid #000000;">
+            <img src="https://cdn.pixabay.com/photo/2022/07/13/21/57/editing-7320125_1280.jpg" class="card-img-top img-fluid" alt="Da Vinci Resolve" style="height: 200px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Da Vinci Resolve</h5>
+              <p class="card-text">A website for editing, color grading, VFX, motion graphics, and audio tools.</p>
+              <div class="mt-auto text-center">
+                <div class="btn fw-bold" style="background-color: #000; padding: 8px 16px; border-radius: 6px; border: none;color: #fff;">
+                  Click Me
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <div class="modal fade" id="project1" >
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content"style="background: linear-gradient(to top, #2c3e50, #4ca1af);">
-        <div class="modal-header border-1" data-bs-dismiss="modal"> 
-          <button type="button" class="btn-close" ></button>
-        </div>
-        <div class="modal-body" >
-          <img src="https://cdn.pixabay.com/photo/2023/04/03/12/59/crowd-7896788_1280.jpg" class="img-fluid w-50 d-block mx-auto" alt="Art Event Management">
-      <div class="mbody" style="background-color: white;">
-          <h5 class="modal-title   fs-2 fw-bolder text-center">ART EVENT MANAGEMENT </h5> <br>
-          <p> <b>Art Event Mangement</b> is a comprehensive ticket booking website for art events, specifically designed for exhibitions, gallery shows, and other cultural showcases. The platform provides a smooth and engaging experience for art enthusiasts to explore upcoming events, view event details, and book tickets online. It features an intuitive user interface where visitors can filter events by type, location, or date, and receive digital tickets with QR codes for easy check-in at venues. Organizers are given access to a dedicated admin panel to manage event listings, monitor ticket sales, and communicate with attendees.
-          </p>
-      </div>
-         </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="modal fade" id="project2">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content"style="background: linear-gradient(to top, #2c3e50, #4ca1af);">
-        <div class="modal-header border-1"data-bs-dismiss="modal"> 
-          <button type="button" class="btn-close" ></button>
-        </div>
-        <div class="modal-body">
-          <img src="https://cdn.pixabay.com/photo/2022/06/02/15/01/music-7238254_1280.jpg" class="img-fluid w-50 d-block mx-auto" alt="EventWibe">
-          <div class="mbody" style="background-color: white;">
-
-          <h5 class="modal-title  fs-2 fw-bolder text-center">EVENTWIBE</h5><br>
-          <p><b>EventWibe</b> is a feature-rich and user-friendly ticket booking website designed for events such as concerts, music shows, and live performances. The platform allows users to easily browse upcoming events, book tickets securely, and manage their bookings through a seamless and intuitive interface. <b> EventWibe</b> offers functionalities like event discovery with filters, secure online payments, instant e-ticket generation with QR codes, and a personalized user dashboard to view booking history. It also includes an admin panel where event organizers can create and manage events, monitor ticket sales, and access attendee data.</p>        
-        </div>
+    
+    <div class="modal fade" id="project1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://cdn.pixabay.com/photo/2023/04/03/12/59/crowd-7896788_1280.jpg" class="img-fluid w-100 d-block mx-auto mb-4" alt="Art Event Management">
+            <div class="mbody" style="background-color: white; padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">ART EVENT MANAGEMENT</h5><br>
+              <p><b>Art Event Mangement</b> is a comprehensive ticket booking website for art events, specifically designed for exhibitions, gallery shows, and other cultural showcases. The platform provides a smooth and engaging experience for art enthusiasts to explore upcoming events, view event details, and book tickets online. It features an intuitive user interface where visitors can filter events by type, location, or date, and receive digital tickets with QR codes for easy check-in at venues. Organizers are given access to a dedicated admin panel to manage event listings, monitor ticket sales, and communicate with attendees.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <div class="modal fade" id="project3"  >
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content" style="background: linear-gradient(to top, #2c3e50, #4ca1af);">
-        <div class="modal-header border-1" data-bs-dismiss="modal"> 
-          <button type="button" class="btn-close" ></button>
-        </div>
-        <div class="modal-body">
-          <img src="https://cdn.pixabay.com/photo/2022/07/13/21/57/editing-7320125_1280.jpg" class="img-fluid w-50 d-block mx-auto" alt="Da Vinci Resolve">
-          <div class="mbody" style="background-color: white;">
-          <h5 class="modal-title fs-2 fw-bolder text-center">DaVinci Resolve</h5><br>
-          <p><b> DaVinci Resolve</b> is a powerful and professional video editing software developed by Blackmagic Design. It is widely used in the film, television, and content creation industries due to its comprehensive suite of tools for video editing, color correction, visual effects (VFX), motion graphics, and audio post-production—all integrated into a single application. One of its standout features is its industry-leading color grading tools, which are trusted by Hollywood professionals. The software also includes Fusion for advanced visual effects and motion graphics, and Fairlight for complete audio editing and mixing. <b> DaVinci Resolve </b> supports high-resolution workflows up to 8K and HDR, and it is compatible with Windows, macOS, and Linux platforms.</p>
-        </div>
+    
+    <div class="modal fade" id="project2">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://cdn.pixabay.com/photo/2022/06/02/15/01/music-7238254_1280.jpg" class="img-fluid w-100 d-block mx-auto mb-4" alt="EventWibe">
+            <div class="mbody" style="background-color: white; padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">EVENTWIBE</h5><br>
+              <p><b>EventWibe</b> is a feature-rich and user-friendly ticket booking website designed for events such as concerts, music shows, and live performances. The platform allows users to easily browse upcoming events, book tickets securely, and manage their bookings through a seamless and intuitive interface. <b>EventWibe</b> offers functionalities like event discovery with filters, secure online payments, instant e-ticket generation with QR codes, and a personalized user dashboard to view booking history. It also includes an admin panel where event organizers can create and manage events, monitor ticket sales, and access attendee data.</p>        
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-
-<section id="contact" class="contacts py-5 px-3 px-md-5 "style="color:#000 ;background: linear-gradient(to bottom , #2c3e50, #4ca1af);">
-  <div class="container">
-  <h2 class="text-center fw-bold mb-4 fs-1">
-    <span style="color: #4ca1af;">CONTACT</span>
-    <span style="color: #fff;">ME</span>
-  </h2>    <div class="contact d-flex flex-column flex-md-row align-items-center">
-      <div class="contact-info p-3 p-md-5 w-100 w-md-50">
-        <ul class="list fs-4">
-          <li class="mb-3 d-flex justify-content-between">
-            <span class="fw-bold me-3 fs-5">EMAIL:</span> 
-            <span class=" text-end fs-5">ann@gmail.com</span>
-          </li>
-          <li class="mb-3 d-flex justify-content-between">
-            <span class="fw-bold me-3 fs-5">PHONE NUMBER:</span> 
-            <span class=" text-end fs-5">9897654678</span>
-          </li>
-          <li class="mb-3 d-flex justify-content-between">
-            <span class="fw-bold me-3 fs-5">LINKEDIN:</span> 
-            <span class=" text-end fs-5">ann_sabu</span>
-          </li>
-          <li class="mb-3 d-flex justify-content-between">
-            <span class="fw-bold me-3 fs-5">INSTAGRAM:</span> 
-            <span class=" text-end fs-5">ann_mariya_sabu</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="contact-form p-3 p-md-5 w-100 w-md-50">
-        <form action="https://formspree.io/f/movddvzb" method="POST">
-          <div class="mb-3">
-            <label for="name" class="form-label fw-bold">NAME</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+    
+    <div class="modal fade" id="project3">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label fw-bold">EMAIL</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+          <div class="modal-body">
+            <img src="https://cdn.pixabay.com/photo/2022/07/13/21/57/editing-7320125_1280.jpg" class="img-fluid w-100 d-block mx-auto mb-4" alt="Da Vinci Resolve">
+            <div class="mbody" style="background-color: white; padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">DaVinci Resolve</h5><br>
+              <p><b>DaVinci Resolve</b> is a powerful and professional video editing software developed by Blackmagic Design. It is widely used in the film, television, and content creation industries due to its comprehensive suite of tools for video editing, color correction, visual effects (VFX), motion graphics, and audio post-production—all integrated into a single application. One of its standout features is its industry-leading color grading tools, which are trusted by Hollywood professionals. The software also includes Fusion for advanced visual effects and motion graphics, and Fairlight for complete audio editing and mixing. <b>DaVinci Resolve</b> supports high-resolution workflows up to 8K and HDR, and it is compatible with Windows, macOS, and Linux platforms.</p>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label fw-bold">PHONE NUMBER</label>
-            <input type="tel" class="form-control" id="phone" name="phone" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label fw-bold">MESSAGE</label>
-            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-          </div>
-          <div class="d-grid gap-2">
-            <button class="btn" style="background-color: #2c3e50;color: #DCDCDC;" type="submit">SUBMIT</button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-<footer class=" text-white py-3" style="background-color: #2c3e50;">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div>
-      <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
-      <a href="#" class="text-white mx-2"><i class="fab fa-github"></i> </a>
-      <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i> </a>
+  <section id="internship" class="internship py-5 px-2" style="background-color: #000; min-height: auto;">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 fs-1 pt-4">
+        <span style="color: #fff;">MY INTERNSHIPS</span>
+      </h2>  
+      <br><br>
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#internship1" style="border: 3px solid #fff; border-radius: 10px; background: #000; color: #fff; transition: transform 0.3s ease;">
+            <div class="card-img-container" style="height: 180px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #fff;">
+              <img src="https://i.postimg.cc/j22NFw47/infosys-logo-png-original.png" class="card-img-top img-fluid" alt="Infosys" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <center><h5 class="card-title"><b>Infosys</b></h5></center>
+              <p class="card-text text-center">Technology in Sports & Social Media Management</p>
+              <div class="mt-auto text-center">
+                <div class="btn fw-bold" style="background-color: #fff; padding: 8px 16px; border-radius: 6px; border: none; color: #000; transition: all 0.3s ease;">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#internship2" style="border: 3px solid #fff; border-radius: 10px; background: #000; color: #fff; transition: transform 0.3s ease;">
+            <div class="card-img-container" style="height: 180px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #fff;">
+              <img src="https://i.postimg.cc/3Rs1mZTw/image.png" class="card-img-top img-fluid" alt="Corizo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <center><h5 class="card-title"><b>Corizo</b></h5></center>
+              <p class="card-text text-center">Artificial Intelligence & Cyber Security</p>
+              <div class="mt-auto text-center">
+                <div class="btn fw-bold" style="background-color: #fff; padding: 8px 16px; border-radius: 6px; border: none; color: #000; transition: all 0.3s ease;">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#internship3" style="border: 3px solid #fff; border-radius: 10px; background: #000; color: #fff; transition: transform 0.3s ease;">
+            <div class="card-img-container" style="height: 180px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #fff;">
+              <img src="https://www.zentegra.com/Zentgera%20Final%20Version.PNG" class="card-img-top img-fluid" alt="Zentegra" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <center><h5 class="card-title"><b>Zentegra</b></h5></center>
+              <p class="card-text text-center">Web Development with HTML, CSS, Bootstrap</p>
+              <div class="mt-auto text-center">
+                <div class="btn fw-bold" style="background-color: #fff; padding: 8px 16px; border-radius: 6px; border: none; color: #000; transition: all 0.3s ease;">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="mb-0">©️All rights reserved.</p>
-  </div>
-</footer>
+    
+    <div class="modal fade" id="internship1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://cdn.pixabay.com/photo/2023/04/03/12/59/crowd-7896788_1280.jpg" class="img-fluid w-100 d-block mx-auto mb-4" alt="Art Event Management">
+            <div class="mbody" style="background-color: white; padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">INFOSYS INTERNSHIP</h5><br>
+              <p>During my internship at <b>Infosys</b>, I worked on integrating technology solutions for sports analytics and social media management. This experience provided me with hands-on exposure to data analysis tools and social media algorithms. I contributed to developing a dashboard that visualized athlete performance metrics and helped optimize social media engagement strategies for sports organizations. The internship enhanced my understanding of how technology can be leveraged in the sports industry and improved my skills in data interpretation and presentation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="internship2">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://cdn.pixabay.com/photo/2022/06/02/15/01/music-7238254_1280.jpg" class="img-fluid w-100 d-block mx-auto mb-4" alt="EventWibe">
+            <div class="mbody" style="background-color: white; padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">CORIZO INTERNSHIP</h5><br>
+              <p>My internship at <b>Corizo</b> focused on Artificial Intelligence and Cyber Security, where I gained practical experience in machine learning algorithms and cybersecurity protocols. I worked on projects involving predictive modeling and threat detection systems, which helped me understand the intersection of AI and security applications. This internship provided valuable insights into emerging technologies and their real-world implementations, strengthening my problem-solving skills and technical knowledge in these cutting-edge fields.</p>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="internship3">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://cdn.pixabay.com/photo/2022/07/13/21/57/editing-7320125_1280.jpg" class="img-fluid w-100 d-block mx-auto mb-4" alt="Da Vinci Resolve">
+            <div class="mbody" style="background-color: white; padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">ZENTEGRA INTERNSHIP</h5><br>
+              <p>At <b>Zentegra</b>, I completed an intensive internship in Web Development, focusing on HTML, CSS, and Bootstrap. This hands-on experience allowed me to build responsive websites from scratch and understand the principles of modern web design. I worked on real client projects, implementing UI designs and ensuring cross-browser compatibility. The internship significantly improved my front-end development skills and gave me practical experience in collaborating with design teams and meeting client requirements within deadlines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contacts py-5 px-3 px-md-5" style="color:#000;background: #fff;min-height: auto;">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 fs-1" style="border-bottom: 4px solid #000;">
+        <span style="color: #000;">CONTACT</span>
+        <span style="color: #000;">ME</span>
+      </h2>    
+      <div class="contact d-flex flex-column flex-md-row align-items-center">
+        <div class="contact-info p-3 p-md-5 w-100 w-md-50">
+          <ul class="list fs-4">
+            <li class="mb-3 d-flex justify-content-between">
+              <span class="fw-bold me-3 fs-5">EMAIL:</span> 
+              <span class="text-end fs-5">annmariyasabu684@gmail.com</span>
+            </li>
+            <li class="mb-3 d-flex justify-content-between">
+              <span class="fw-bold me-3 fs-5">PHONE NUMBER:</span> 
+              <span class="text-end fs-5">9447611814</span>
+            </li>
+            <li class="mb-3 d-flex justify-content-between">
+              <span class="fw-bold me-3 fs-5">LINKEDIN:</span> 
+              <span class="text-end fs-5">Ann mariya Sabu</span>
+            </li>
+            <li class="mb-3 d-flex justify-content-between">
+              <span class="fw-bold me-3 fs-5">INSTAGRAM:</span> 
+              <span class="text-end fs-5">___.ann_mariya.___</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form p-3 p-md-5 w-100 w-md-50">
+          <form action="https://formspree.io/f/movddvzb" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label fw-bold">NAME</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold">EMAIL</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label fw-bold">PHONE NUMBER</label>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label fw-bold">MESSAGE</label>
+              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn" style="background-color: #000;color: #fff;" type="submit">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <footer class="text-white py-3" style="background-color: #000;">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0">
+        <a href="https://www.linkedin.com/in/ann-mariya-sabu/" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Ann-mariya-Sabu" class="text-white mx-2"><i class="fab fa-github"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="mb-0 text-center text-md-start">©️All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
