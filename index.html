@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PORTFOLIO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes slideInRight {
+      from { transform: translateX(100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+   
+    
+    .animate-on-scroll {
+      opacity: 0;
+      transition: all 0.6s ease-out;
+    }
+    
+    .animate-on-scroll.animated {
+      opacity: 1;
+    }
+    
+    .floating-name {
+      animation: fadeIn 1.5s ease-in-out, pulse 2s infinite 1.5s;
+    }
+    
+    .about-section {
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    .about-image {
+      animation: slideInLeft 1s ease-in-out;
+    }
+    
+    .about-content {
+      animation: slideInRight 1s ease-in-out;
+    }
+    
+    .card-hover-effect {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-hover-effect:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-gold {
+      background-color: #D4AF37;
+      color: #000;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-gold:hover {
+      background-color: #b6982d;
+      transform: scale(1.05);
+    }
+    
+    .btn-black {
+      background-color: #000;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-black:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
+    
+    .btn-white {
+      background-color: #fff;
+      color: #000;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-white:hover {
+      background-color: #e6e6e6;
+      transform: scale(1.05);
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+      height:10px;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #D4AF37;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .nav-link:hover {
+      color: #D4AF37 !important;
+    }
+    
+    .progress-bar {
+      transition: width 1.5s ease-in-out;
+    }
+    
+    @media (max-width: 768px) {
+      /* Home section */
+      .image {
+        padding-top: 150px;
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .float-img {
+        display: none;
+      }
+      
+      .floating-name {
+        font-size: 2.5rem !important;
+      }
+      
+      /* About section */
+      .about-container {
+        flex-direction: column;
+        padding: 80px 20px !important;
+        margin: 0 15px !important;
+      }
+      
+      .about-image {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin-bottom: 30px;
+        width: 200px !important;
+        height: 200px !important;
+      }
+      
+      .about-content {
+        margin-left: 0 !important;
+        text-align: center;
+      }
+      
+      /* Skills section */
+      .progress-section {
+        height: auto !important;
+        padding-bottom: 100px !important;
+      }
+      
+      .Icon {
+        display: none;
+      }
+      
+      /* Projects section */
+      .projects {
+        height: auto !important;
+        padding-bottom: 50px;
+      }
+      
+      .card {
+        margin-bottom: 20px;
+      }
+      
+      /* Internships section */
+      .internship {
+        min-height: auto !important;
+        padding-bottom: 50px;
+      }
+      
+      /* Contact section */
+      .contacts {
+        min-height: auto !important;
+      }
+      
+      .contact {
+        flex-direction: column;
+      }
+      
+      .contact-info, .contact-form {
+        width: 100% !important;
+        padding: 20px !important;
+      }
+      
+      .contact-info ul li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .contact-info ul li span {
+        text-align: left !important;
+        margin-bottom: 5px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      /* Navbar */
+      .navbar-brand {
+        font-size: 1rem;
+      }
+      
+      /* Home section */
+      .floating-name {
+        font-size: 2rem !important;
+      }
+      
+      /* Modal adjustments */
+      .modal-body img {
+        width: 100% !important;
+      }
+    }
+    .progress-section {
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-section .Icon {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.progress-section .Icon:hover {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.progress-section .icon1 { top: 15%; left: 5%; }
+.progress-section .icon2 { top: 65%; left: 7%; }
+.progress-section .icon3 { top: 25%; right: 8%; }
+.progress-section .icon4 { top: 70%; right: 6%; }
+.progress-section .icon5 { top: 50%; left: 50%; transform: translateX(-50%); }
+
+.progress {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: visible;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  z-index: 1;
+  background-size: 20px 20px;
+  border-radius: 20px;
+  animation: move 1s linear infinite;
+  overflow: hidden;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+.skill-name {
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.skill-percent {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient colors for each skill bar */
+.progress-bar.js-bar { background: linear-gradient(90deg, #4fc3f7, #0288d1); }
+.progress-bar.java-bar { background: linear-gradient(90deg, #ff8a65, #d84315); }
+.progress-bar.cpp-bar { background: linear-gradient(90deg, #9575cd, #512da8); }
+.progress-bar.node-bar { background: linear-gradient(90deg, #aed581, #689f38); }
+.progress-bar.html-bar { background: linear-gradient(90deg, #ffd54f, #ff8f00); }
+
+  
+
+
+/* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            cursor: none;
+        }
+        
+        /* Custom cursor */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            mix-blend-mode: difference;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: width 0.3s, height 0.3s;
+        }
+        
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9998;
+            transition: all 0.1s ease;
+        }
+        
+        /* Effect elements */
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            pointer-events: none;
+        }
+        
+        .icon-follower {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+        
+        .gradient-blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(94,23,235,0.4) 0%, rgba(229,46,113,0.2) 50%, rgba(255,138,0,0.1) 100%);
+            filter: blur(40px);
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        
+        /* Skills section styles */
+        .progress-section {
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+            background: #000;
+            padding: 40px 0;
+        }
+
+        .progress-section .Icon {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .progress-section .Icon:hover {
+            opacity: 0.2;
+            transform: scale(1.1);
+        }
+
+        .progress-section .icon1 { top: 15%; left: 5%; }
+        .progress-section .icon2 { top: 65%; left: 7%; }
+        .progress-section .icon3 { top: 25%; right: 8%; }
+        .progress-section .icon4 { top: 70%; right: 6%; }
+        .progress-section .icon5 { top: 50%; left: 50%; transform: translateX(-50%); }
+
+        .progress {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: visible;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.2) 75%,
+                transparent 75%,
+                transparent
+            );
+            z-index: 1;
+            background-size: 20px 20px;
+            border-radius: 20px;
+            animation: move 1s linear infinite;
+            overflow: hidden;
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 20px 20px;
+            }
+        }
+
+        .skill-name {
+            color: #fff;
+            font-weight: 600;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .skill-percent {
+            color: #fff;
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Gradient colors for each skill bar */
+        .progress-bar.js-bar { background: linear-gradient(90deg, #4fc3f7, #0288d1); }
+        .progress-bar.java-bar { background: linear-gradient(90deg, #ff8a65, #d84315); }
+        .progress-bar.cpp-bar { background: linear-gradient(90deg, #9575cd, #512da8); }
+        .progress-bar.node-bar { background: linear-gradient(90deg, #aed581, #689f38); }
+        .progress-bar.html-bar { background: linear-gradient(90deg, #ffd54f, #ff8f00); }
+        
+        /* Effect selector */
+        .effect-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .effect-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: none;
+            transition: all 0.3s ease;
+        }
+        
+        .effect-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .effect-btn.active {
+            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            box-shadow: 0 0 15px rgba(255, 138, 0, 0.5);
+        }
+        
+        /* Instructions */
+        .instructions {
+            text-align: center;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: #ff8a00;
+            font-weight: 600;
+        }
+        
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff8a00, #e52e71, #5e17eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #000000; margin-bottom: 0.1%; z-index: 1000;">
+    <div class="container">
+      <a class="navbar-brand fw-bolder text-white animate__animated animate__fadeIn">Ann Mariya Sabu</a>
+      
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+        <i class="bi bi-three-dots-vertical"></i>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-white" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-white" href="#about">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-white" href="#Skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-white" href="#project">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-white" href="#internship">Internships</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-white" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>  
+
+  <div id="home" class="image" style="background: black; position: relative; height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding-top: 200px;">
+    <div class="text-center animate__animated animate__fadeIn">
+      <div class="fs-1 fw-bold" style="color: #fff;">
+        Hi, This is
+      </div>
+       <div class="floating-name display-1 fw-bolder" style="color: #fff;font-family: 'Cinzel', serif;">
+        Ann Mariya Sabu
+      </div>
+      <p style="font-family: 'Roboto', sans-serif; font-size: 1.2rem; color: #ffffff;">
+       <i>-Aspiring Data Scientist</i>
+      </p>
+    </div>
+  
+  </div>
+
+  <div id="about" class="about-section d-flex justify-content-center align-items-center vh-100 bg-white">
+    <div class="about-container d-flex align-items-center ms-5 animate-on-scroll" style="background: black; border-radius: 50px; padding: 140px 50px; position: relative; gap: 30px;">  
+      <div class="about-image" style="width: 250px; height: 250px; border-radius: 20px; overflow: hidden; position: absolute; left: -125px; top: 50%; transform: translateY(-50%); background-color: white;">
+        <img src="https://i.postimg.cc/KcTnM6wJ/3.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      
+      <div class="about-content" style="margin-left: 100px;">
+        <h2 class="fs-2 fw-bold">
+          <span style="color: #fff;">ABOUT</span> 
+          <span style="color: #fff;">ME</span>
+        </h2>
+        <p style="line-height: 1.5; margin: 20px 0 20px;color: #DCDCDC;">
+          Hello<br>I am Ann. I am a BCA student with a strong passion for technology, programming, and data science.<br>
+           I enjoy designing solutions, working collaboratively in teams, <br>
+           and continuously improving my skills in problem-solving, critical thinking, and leadership.<br>
+            With hands-on experience through internships and projects,<br>
+          I aim to contribute effectively in the tech industry and grow as a professional.
+        </p>
+        <a href="#contact" class="btn btn-gold fw-bold">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section id="Skills" class="progress-section py-5 px-2 mt-5 position-relative" style="background: #000; height:100vh;">
+    
+
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 fs-1 animate-on-scroll">
+        <span style="color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5);">MY </span>
+        <span style="color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5);">SKILLS</span>
+      </h2>
+      <br><br><br>
+      <div class="container animate-on-scroll" style="max-width: 800px;">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 skill-name">HTML & CSS</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar js-bar" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="col-md-2 skill-percent">90%</div>
+        </div>
+        
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 skill-name">Bootstrap</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar java-bar" style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="col-md-2 skill-percent">75%</div>
+        </div>
+        
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 skill-name">Javascript</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar cpp-bar" style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="col-md-2 skill-percent">75%</div>
+        </div>
+
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 skill-name">Java</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar node-bar" style="width: 45%;"></div>
+            </div>
+          </div>
+          <div class="col-md-2 skill-percent">45%</div>
+        </div>
+        
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-3 skill-name">C++</div>
+          <div class="col-md-7">
+            <div class="progress">
+              <div class="progress-bar html-bar" style="width: 45%;"></div>
+            </div>
+          </div>
+          <div class="col-md-2 skill-percent">45%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollElements = document.querySelectorAll('.animate-on-scroll');
+  
+  const elementInView = (el, scrollOffset = 0) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+      elementTop <= 
+      ((window.innerHeight || document.documentElement.clientHeight) * (1 - scrollOffset))
+    );
+  };
+  
+  const displayScrollElement = (element) => {
+    element.classList.add('visible');
+  };
+  
+  const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el, 0.2)) {
+        displayScrollElement(el);
+      }
+    });
+  };
+  
+  window.addEventListener('scroll', () => {
+    handleScrollAnimation();
+  });
+  
+  handleScrollAnimation();
+});
+</script>
+  <section id="project" class="projects py-5 px-2" style="height: auto; background-color: white;height:100vh;">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 fs-1 animate-on-scroll">
+        <span class="text-dark">MY PROJECTS</span>
+      </h2>  
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card h-100 card-hover-effect" data-bs-toggle="modal" data-bs-target="#project1" style="border: 5px solid #000000;">
+            <img src="https://cdn.pixabay.com/photo/2023/04/03/12/59/crowd-7896788_1280.jpg" class="card-img-top img-fluid" alt="Art Event Management" style="height: 200px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Art Event Management</h5>
+              <p class="card-text">A Ticket Booking website for Art Event like exhibition, Art Gallery Shows etc.</p>
+              <div class="mt-auto text-center">
+                <div class="btn btn-black fw-bold">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="card h-100 card-hover-effect" data-bs-toggle="modal" data-bs-target="#project2" style="border: 5px solid #000000;">
+            <img src="https://cdn.pixabay.com/photo/2022/06/02/15/01/music-7238254_1280.jpg" class="card-img-top img-fluid" alt="EventWibe" style="height: 200px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">EventWibe</h5>
+              <p class="card-text">A Ticket Booking website for Events like Concerts, Music shows etc.</p>
+              <div class="mt-auto text-center">
+                <div class="btn btn-black fw-bold">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.4s;">
+          <div class="card h-100 card-hover-effect" data-bs-toggle="modal" data-bs-target="#project3" style="border: 5px solid #000000;">
+            <img src="https://cdn.pixabay.com/photo/2022/07/13/21/57/editing-7320125_1280.jpg" class="card-img-top img-fluid" alt="Da Vinci Resolve" style="height: 200px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Da Vinci Resolve</h5>
+              <p class="card-text">A website for editing, color grading, VFX, motion graphics, and audio tools.</p>
+              <div class="mt-auto text-center">
+                <div class="btn btn-black fw-bold">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="project1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://cdn.pixabay.com/photo/2023/04/03/12/59/crowd-7896788_1280.jpg" class="img-fluid w-100 d-block mx-auto mb-4" alt="Art Event Management">
+            <div class="mbody" style="background-color: rgb(0, 0, 0); padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">ART EVENT MANAGEMENT</h5><br>
+              <p><b>Art Event Mangement</b> is a comprehensive ticket booking website for art events, specifically designed for exhibitions, gallery shows, and other cultural showcases. The platform provides a smooth and engaging experience for art enthusiasts to explore upcoming events, view event details, and book tickets online. It features an intuitive user interface where visitors can filter events by type, location, or date, and receive digital tickets with QR codes for easy check-in at venues. Organizers are given access to a dedicated admin panel to manage event listings, monitor ticket sales, and communicate with attendees.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="project2">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://cdn.pixabay.com/photo/2022/06/02/15/01/music-7238254_1280.jpg" class="img-fluid w-100 d-block mx-auto mb-4" alt="EventWibe">
+            <div class="mbody" style="background-color: rgb(0, 0, 0); padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">EVENTWIBE</h5><br>
+              <p><b>EventWibe</b> is a feature-rich and user-friendly ticket booking website designed for events such as concerts, music shows, and live performances. The platform allows users to easily browse upcoming events, book tickets securely, and manage their bookings through a seamless and intuitive interface. <b>EventWibe</b> offers functionalities like event discovery with filters, secure online payments, instant e-ticket generation with QR codes, and a personalized user dashboard to view booking history. It also includes an admin panel where event organizers can create and manage events, monitor ticket sales, and access attendee data.</p>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="project3">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://cdn.pixabay.com/photo/2022/07/13/21/57/editing-7320125_1280.jpg" class="img-fluid w-100 d-block mx-auto mb-4" alt="Da Vinci Resolve">
+            <div class="mbody" style="background-color: rgb(0, 0, 0); padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">DaVinci Resolve</h5><br>
+              <p><b>DaVinci Resolve</b> is a powerful and professional video editing software developed by Blackmagic Design. It is widely used in the film, television, and content creation industries due to its comprehensive suite of tools for video editing, color correction, visual effects (VFX), motion graphics, and audio post-production—all integrated into a single application. One of its standout features is its industry-leading color grading tools, which are trusted by Hollywood professionals. The software also includes Fusion for advanced visual effects and motion graphics, and Fairlight for complete audio editing and mixing. <b>DaVinci Resolve</b> supports high-resolution workflows up to 8K and HDR, and it is compatible with Windows, macOS, and Linux platforms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="internship" class="internship py-5 px-2" style="background-color: #000; min-height: auto;height:100vh;">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 fs-1 pt-4 animate-on-scroll">
+        <span style="color: #fff;">MY INTERNSHIPS</span>
+      </h2>  
+      <br><br>
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card h-100 card-hover-effect" data-bs-toggle="modal" data-bs-target="#internship1" style="border: 3px solid #fff; border-radius: 10px; background: #000; color: #fff;">
+            <div class="card-img-container" style="height: 180px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #fff;">
+              <img src="https://i.postimg.cc/j22NFw47/infosys-logo-png-original.png" class="card-img-top img-fluid" alt="Infosys" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <center><h5 class="card-title"><b>Infosys SpringBoard</b></h5></center>
+              <p class="card-text text-center">Technology in Sports & Social Media Management</p>
+              <div class="mt-auto text-center">
+                <div class="btn btn-white fw-bold">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="card h-100 card-hover-effect" data-bs-toggle="modal" data-bs-target="#internship2" style="border: 3px solid #fff; border-radius: 10px; background: #000; color: #fff;">
+            <div class="card-img-container" style="height: 180px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #fff;">
+              <img src="https://i.postimg.cc/3Rs1mZTw/image.png" class="card-img-top img-fluid" alt="Corizo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <center><h5 class="card-title"><b>Corizo</b></h5></center>
+              <p class="card-text text-center">Artificial Intelligence & Cyber Security</p>
+              <div class="mt-auto text-center">
+                <div class="btn btn-white fw-bold">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.4s;">
+          <div class="card h-100 card-hover-effect" data-bs-toggle="modal" data-bs-target="#internship3" style="border: 3px solid #fff; border-radius: 10px; background: #000; color: #fff;">
+            <div class="card-img-container" style="height: 180px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #fff;">
+              <img src="https://i.postimg.cc/SKkKV9bx/zentegra-logo.png" class="card-img-top img-fluid" alt="Zentegra" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <center><h5 class="card-title"><b>Zentegra</b></h5></center>
+              <p class="card-text text-center">Web Development with HTML, CSS, Bootstrap</p>
+              <div class="mt-auto text-center">
+                <div class="btn btn-white fw-bold">
+                  Click Me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="modal fade" id="internship1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://i.postimg.cc/ZKR4gmmL/Infosys-INTERNSHIP.png" class="img-fluid w-70 d-block mx-auto mb-4" alt="EventWibe">
+            <div class="mbody" style="background-color: rgb(0, 0, 0); padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">INFOSYS SPRINGBOARD INTERNSHIP</h5><br>
+               <p>During my internship at <b>Infosys</b>, I worked on integrating technology solutions for sports analytics and social media management. This experience provided me with hands-on exposure to data analysis tools and social media algorithms. I contributed to developing a dashboard that visualized athlete performance metrics and helped optimize social media engagement strategies for sports organizations. The internship enhanced my understanding of how technology can be leveraged in the sports industry and improved my skills in data interpretation and presentation.</p>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="internship2">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://i.postimg.cc/L4N0sF8C/Corizo-AI.png" class="img-fluid w-70 d-block mx-auto mb-4" alt="EventWibe">
+            <img src="https://i.postimg.cc/yxkhd5Lt/Corizo-Cyber.png" class="img-fluid w-70 d-block mx-auto mb-4" alt="EventWibe">
+            <div class="mbody" style="background-color: rgb(0, 0, 0); padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">CORIZO INTERNSHIP</h5><br>
+              <p>My internship at <b>Corizo</b> focused on Artificial Intelligence and Cyber Security, where I gained practical experience in machine learning algorithms and cybersecurity protocols. I worked on projects involving predictive modeling and threat detection systems, which helped me understand the intersection of AI and security applications. This internship provided valuable insights into emerging technologies and their real-world implementations, strengthening my problem-solving skills and technical knowledge in these cutting-edge fields.</p>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="internship3">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background: linear-gradient(to top,#fff,#000);">
+          <div class="modal-header border-1" data-bs-dismiss="modal"> 
+            <button type="button" class="btn-close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="https://i.postimg.cc/nzjw7dfB/ZENTEGRA-INTENSHIP.png" class="img-fluid w-100 d-block mx-auto mb-4" alt="Da Vinci Resolve">
+            <div class="mbody" style="background-color: rgb(0, 0, 0); padding: 20px;">
+              <h5 class="modal-title fs-2 fw-bolder text-center">ZENTEGRA INTERNSHIP</h5><br>
+              <p>At <b>Zentegra</b>, I completed an intensive internship in Web Development, focusing on HTML, CSS, and Bootstrap. This hands-on experience allowed me to build responsive websites from scratch and understand the principles of modern web design. I worked on real client projects, implementing UI designs and ensuring cross-browser compatibility. The internship significantly improved my front-end development skills and gave me practical experience in collaborating with design teams and meeting client requirements within deadlines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contacts py-5 px-3 px-md-5" style="color:#000;background: #fff;min-height: auto;height:100vh;">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4 fs-1 animate-on-scroll" style="border-bottom: 4px solid #000;">
+        <span style="color: #000;">CONTACT</span>
+        <span style="color: #000;">ME</span>
+      </h2>    
+      <div class="contact d-flex flex-column flex-md-row align-items-center">
+        <div class="contact-info p-3 p-md-5 w-100 w-md-50 animate-on-scroll">
+          <ul class="list fs-4">
+            <li class="mb-3 d-flex justify-content-between">
+              <span class="fw-bold me-3 fs-5">EMAIL:</span> 
+              <span class="text-end fs-5">annmariyasabu684@gmail.com</span>
+            </li>
+            <li class="mb-3 d-flex justify-content-between">
+              <span class="fw-bold me-3 fs-5">PHONE NUMBER:</span> 
+              <span class="text-end fs-5">9447611814</span>
+            </li>
+            <li class="mb-3 d-flex justify-content-between">
+              <span class="fw-bold me-3 fs-5">LINKEDIN:</span> 
+              <span class="text-end fs-5">Ann mariya Sabu</span>
+            </li>
+           
+          </ul>
+        </div>
+
+        <div class="contact-form p-3 p-md-5 w-100 w-md-50 animate-on-scroll" style="animation-delay: 0.2s;">
+          <form action="https://formspree.io/f/movddvzb" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label fw-bold">NAME</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold">EMAIL</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label fw-bold">PHONE NUMBER</label>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label fw-bold">MESSAGE</label>
+              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-black" type="submit">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <footer class="text-white py-3" style="background-color: #000;">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0">
+        <a href="https://www.linkedin.com/in/ann-mariya-sabu-711500374/" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Ann-mariya-Sabu" class="text-white mx-2"><i class="fab fa-github"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="mb-0 text-center text-md-start">©️All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      animateElements.forEach(element => {
+        observer.observe(element);
+      });
+      
+      const progressBars = document.querySelectorAll('.progress-bar');
+      const skillsSection = document.querySelector('.progress-section');
+      
+      const skillsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            progressBars.forEach(bar => {
+              const width = bar.style.width;
+              bar.style.width = '0';
+              setTimeout(() => {
+                bar.style.width = width;
+              }, 100);
+            });
+            skillsObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+      
+      skillsObserver.observe(skillsSection);
+    });
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+      } else {
+        navbar.style.boxShadow = 'none';
+      }
+    });
+  </script>
+
+  <!-- Custom cursor elements -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            const effectButtons = document.querySelectorAll('.effect-btn');
+            let currentEffect = 'gradient';
+            let mouseX = 0;
+            let mouseY = 0;
+            let followerX = 0;
+            let followerY = 0;
+            let particles = [];
+            let ripples = [];
+            let icons = [];
+            let gradientBlob = null;
+            
+            // Initialize gradient blob if it's the active effect
+            if (currentEffect === 'gradient') {
+                createGradientBlob();
+            }
+            
+            // Move cursor and follower
+            document.addEventListener('mousemove', function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                cursor.style.left = mouseX + 'px';
+                cursor.style.top = mouseY + 'px';
+                
+                // Apply the selected effect
+                applyEffect(currentEffect, e);
+            });
+            
+            // Animate cursor follower
+            function animate() {
+                followerX += (mouseX - followerX) / 6;
+                followerY += (mouseY - followerY) / 6;
+                
+                cursorFollower.style.left = followerX + 'px';
+                cursorFollower.style.top = followerY + 'px';
+                
+                requestAnimationFrame(animate);
+            }
+            animate();
+            
+            // Effect selection
+            effectButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const effect = this.getAttribute('data-effect');
+                    
+                    // Remove all effects
+                    removeAllEffects();
+                    
+                    // Update active button
+                    effectButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Set new effect
+                    currentEffect = effect;
+                    
+                    // Initialize new effect
+                    if (effect === 'gradient') {
+                        createGradientBlob();
+                    }
+                });
+            });
+            
+            // Apply the selected effect
+            function applyEffect(effect, e) {
+                switch(effect) {
+                    case 'particles':
+                        createParticle(e);
+                        break;
+                    case 'ripple':
+                        createRipple(e);
+                        break;
+                    case 'icons':
+                        createIconFollower(e);
+                        break;
+                    case 'gradient':
+                        moveGradientBlob(e);
+                        break;
+                    case 'none':
+                        // No effect
+                        break;
+                }
+            }
+            
+            // Remove all effects
+            function removeAllEffects() {
+                // Remove particles
+                particles.forEach(particle => {
+                    if (particle && particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                });
+                particles = [];
+                
+                // Remove ripples
+                ripples.forEach(ripple => {
+                    if (ripple && ripple.parentNode) {
+                        ripple.parentNode.removeChild(ripple);
+                    }
+                });
+                ripples = [];
+                
+                // Remove icons
+                icons.forEach(icon => {
+                    if (icon && icon.parentNode) {
+                        icon.parentNode.removeChild(icon);
+                    }
+                });
+                icons = [];
+                
+                // Remove gradient blob
+                if (gradientBlob && gradientBlob.parentNode) {
+                    gradientBlob.parentNode.removeChild(gradientBlob);
+                    gradientBlob = null;
+                }
+            }
+            
+            // Particle effect
+            function createParticle(e) {
+                if (Math.random() > 0.5) return; // Control density
+                
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 5 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                const colors = [
+                    '#ff8a00', '#e52e71', '#5e17eb', 
+                    '#4fc3f7', '#aed581', '#ffd54f'
+                ];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                particle.style.left = e.clientX + 'px';
+                particle.style.top = e.clientY + 'px';
+                
+                document.body.appendChild(particle);
+                particles.push(particle);
+                
+                // Animate particle
+                let speedX = (Math.random() - 0.5) * 10;
+                let speedY = (Math.random() - 0.5) * 10;
+                
+                let opacity = 1;
+                let particleInterval = setInterval(() => {
+                    opacity -= 0.02;
+                    particle.style.opacity = opacity;
+                    
+                    const x = parseFloat(particle.style.left) + speedX;
+                    const y = parseFloat(particle.style.top) + speedY;
+                    
+                    particle.style.left = x + 'px';
+                    particle.style.top = y + 'px';
+                    
+                    if (opacity <= 0) {
+                        clearInterval(particleInterval);
+                        if (particle.parentNode) {
+                            particle.parentNode.removeChild(particle);
+                        }
+                        particles = particles.filter(p => p !== particle);
+                    }
+                }, 30);
+            }
+            
+            // Ripple effect
+            function createRipple(e) {
+                if (Math.random() > 0.7) return; // Control density
+                
+                const ripple = document.createElement('div');
+                ripple.classList.add('ripple');
+                
+                const size = Math.random() * 30 + 10;
+                ripple.style.width = size + 'px';
+                ripple.style.height = size + 'px';
+                
+                const colors = [
+                    '#ff8a00', '#e52e71', '#5e17eb', 
+                    '#4fc3f7', '#aed581', '#ffd54f'
+                ];
+                ripple.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                ripple.style.left = e.clientX + 'px';
+                ripple.style.top = e.clientY + 'px';
+                
+                document.body.appendChild(ripple);
+                ripples.push(ripple);
+                
+                // Animate ripple
+                let scale = 0;
+                let opacity = 0.7;
+                
+                let rippleInterval = setInterval(() => {
+                    scale += 0.1;
+                    opacity -= 0.02;
+                    
+                    ripple.style.transform = `scale(${scale})`;
+                    ripple.style.opacity = opacity;
+                    
+                    if (opacity <= 0) {
+                        clearInterval(rippleInterval);
+                        if (ripple.parentNode) {
+                            ripple.parentNode.removeChild(ripple);
+                        }
+                        ripples = ripples.filter(r => r !== ripple);
+                    }
+                }, 30);
+            }
+            
+            // Icon follower effect
+            function createIconFollower(e) {
+                if (Math.random() > 0.9) return; // Control density
+                
+                const icon = document.createElement('i');
+                icon.classList.add('icon-follower');
+                
+                const iconsList = [
+                    'fas fa-code', 'fas fa-laptop-code', 'fas fa-microchip',
+                    'fas fa-brain', 'fas fa-bolt', 'fas fa-cog',
+                    'fas fa-microchip', 'fas fa-server', 'fas fa-globe'
+                ];
+                
+                icon.className = 'icon-follower ' + iconsList[Math.floor(Math.random() * iconsList.length)];
+                
+                icon.style.left = e.clientX + (Math.random() - 0.5) * 50 + 'px';
+                icon.style.top = e.clientY + (Math.random() - 0.5) * 50 + 'px';
+                
+                const colors = [
+                    '#ff8a00', '#e52e71', '#5e17eb', 
+                    '#4fc3f7', '#aed581', '#ffd54f'
+                ];
+                icon.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                document.body.appendChild(icon);
+                icons.push(icon);
+                
+                // Animate icon
+                let opacity = 0.8;
+                
+                let iconInterval = setInterval(() => {
+                    opacity -= 0.02;
+                    icon.style.opacity = opacity;
+                    
+                    const y = parseFloat(icon.style.top) - 2;
+                    icon.style.top = y + 'px';
+                    
+                    if (opacity <= 0) {
+                        clearInterval(iconInterval);
+                        if (icon.parentNode) {
+                            icon.parentNode.removeChild(icon);
+                        }
+                        icons = icons.filter(i => i !== icon);
+                    }
+                }, 30);
+            }
+            
+            // Gradient blob effect
+            function createGradientBlob() {
+                gradientBlob = document.createElement('div');
+                gradientBlob.classList.add('gradient-blob');
+                document.body.appendChild(gradientBlob);
+            }
+            
+            function moveGradientBlob(e) {
+                if (!gradientBlob) return;
+                
+                gradientBlob.style.left = (e.clientX - 150) + 'px';
+                gradientBlob.style.top = (e.clientY - 150) + 'px';
+            }
+            
+            // Animate skill bars on page load
+            setTimeout(() => {
+                document.querySelectorAll('.progress-bar').forEach(progress => {
+                    const width = progress.style.width;
+                    progress.style.width = '0';
+                    setTimeout(() => {
+                        progress.style.width = width;
+                    }, 100);
+                });
+            }, 500);
+            
+            // Custom cursor effects on elements
+            document.querySelectorAll('.skill-name, .skill-percent, .Icon, .effect-btn').forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    cursor.style.width = '30px';
+                    cursor.style.height = '30px';
+                    cursor.style.background = 'rgba(255, 138, 0, 0.8)';
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    cursor.style.width = '20px';
+                    cursor.style.height = '20px';
+                    cursor.style.background = 'rgba(255, 255, 255, 0.8)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
